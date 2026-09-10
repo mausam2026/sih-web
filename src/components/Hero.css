@@ -1,0 +1,700 @@
+/* =========================================
+   HERO SECTION
+   GREY + WHITE LUNAR THEME
+========================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 5, 0.96) 0%,
+      rgba(5, 5, 5, 0.85) 30%,
+      rgba(5, 5, 5, 0.58) 60%,
+      rgba(5, 5, 5, 0.48) 100%
+    ),
+    url("/moon.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+}
+
+.moon-glow {
+  display: none;
+}
+
+
+/* =========================================
+   HERO BACKGROUND
+========================================= */
+
+.hero-background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+.stars {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.9) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.55) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.7) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    120px 120px,
+    180px 180px,
+    250px 250px;
+
+  background-position:
+    20px 30px,
+    80px 100px,
+    150px 50px;
+
+  opacity: 0.35;
+
+  animation: starMove 35s linear infinite;
+}
+
+
+/* =========================================
+   MOON GLOW
+========================================= */
+
+.moon-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -110px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 32% 30%,
+      #ffffff 0%,
+      #dedede 14%,
+      #a9a9a9 32%,
+      #666666 52%,
+      #292929 70%,
+      transparent 73%
+    );
+
+  opacity: 0.48;
+
+  box-shadow:
+    0 0 60px rgba(255, 255, 255, 0.12),
+    0 0 130px rgba(255, 255, 255, 0.07),
+    0 0 220px rgba(255, 255, 255, 0.04);
+}
+
+
+/* Moon craters */
+
+.moon-glow::before {
+  content: "";
+
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  top: 105px;
+  left: 110px;
+
+  border-radius: 50%;
+
+  background: rgba(60, 60, 60, 0.28);
+
+  box-shadow:
+    125px 50px 0 15px rgba(55, 55, 55, 0.20),
+    60px 180px 0 8px rgba(50, 50, 50, 0.25),
+    185px 210px 0 24px rgba(55, 55, 55, 0.16),
+    95px 300px 0 11px rgba(50, 50, 50, 0.22);
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(900px, 90%);
+
+  padding: 120px 0 60px;
+
+  text-align: center;
+
+  animation: heroFadeIn 1s ease-out;
+}
+
+
+/* =========================================
+   HERO TAG
+========================================= */
+
+.hero-tag {
+  display: inline-block;
+
+  margin-bottom: 28px;
+
+  padding: 8px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #bcbcbc;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, 0.03);
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.hero h1 {
+  margin: 0;
+
+  max-width: 900px;
+
+  color: #f7f7f7;
+
+  font-size: clamp(48px, 7vw, 82px);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+
+  text-shadow:
+    0 0 30px rgba(255, 255, 255, 0.04);
+}
+
+
+/* White/grey second line */
+
+.hero h1 span {
+  display: block;
+
+  margin-top: 8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #bdbdbd,
+      #777777
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 720px;
+
+  margin: 30px auto 0;
+
+  color: #b0b0b0;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  font-weight: 400;
+}
+
+
+.hero-subtext {
+  max-width: 650px;
+
+  margin: 12px auto 0;
+
+  color: #6f6f6f;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 38px;
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.primary-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-width: 165px;
+
+  padding: 14px 22px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #ffffff;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #080808;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 30px rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.primary-btn span {
+  font-size: 20px;
+
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+
+  background: #dcdcdc;
+
+  border-color: #dcdcdc;
+
+  box-shadow:
+    0 12px 35px rgba(255, 255, 255, 0.15);
+}
+
+
+.primary-btn:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
+
+.secondary-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 165px;
+
+  padding: 13px 22px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #c2c2c2;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.secondary-btn:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.4);
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   HERO STATS
+========================================= */
+
+.hero-stats {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 65px;
+
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.hero-stats > div {
+  min-width: 180px;
+
+  padding: 0 35px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.hero-stats > div:last-child {
+  border-right: none;
+}
+
+
+/* Stat number */
+
+.hero-stats strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* Stat label */
+
+.hero-stats span {
+  display: block;
+
+  color: #737373;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes starMove {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-80px);
+  }
+
+}
+
+
+@keyframes heroFadeIn {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero-content {
+    width: 90%;
+  }
+
+
+  .hero h1 {
+    font-size: clamp(44px, 8vw, 65px);
+  }
+
+
+  .moon-glow {
+    width: 400px;
+    height: 400px;
+
+    right: -160px;
+
+    opacity: 0.32;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 100vh;
+  }
+
+
+  .hero-content {
+    width: 90%;
+
+    padding-top: 145px;
+
+    padding-bottom: 40px;
+  }
+
+
+  .hero-tag {
+    margin-bottom: 23px;
+
+    padding: 7px 12px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .hero h1 {
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    letter-spacing: -1.8px;
+  }
+
+
+  .hero h1 span {
+    margin-top: 5px;
+  }
+
+
+  .hero-description {
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  .hero-subtext {
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-top: 30px;
+  }
+
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+
+    max-width: 280px;
+  }
+
+
+  .hero-stats {
+    margin-top: 45px;
+
+    padding-top: 22px;
+  }
+
+
+  .hero-stats > div {
+    width: 33.33%;
+
+    min-width: auto;
+
+    padding: 0 8px;
+  }
+
+
+  .hero-stats strong {
+    font-size: 18px;
+  }
+
+
+  .hero-stats span {
+    font-size: 7px;
+
+    line-height: 1.4;
+  }
+
+
+  .moon-glow {
+    width: 300px;
+    height: 300px;
+
+    right: -150px;
+
+    top: 35%;
+
+    opacity: 0.18;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+
+  .hero-stats strong {
+    font-size: 16px;
+  }
+
+
+  .hero-stats span {
+    font-size: 6px;
+  }
+
+}

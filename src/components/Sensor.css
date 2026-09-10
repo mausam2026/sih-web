@@ -1,0 +1,627 @@
+/* =========================================
+   SENSORS SECTION
+   SELENOMATCH — GREY + WHITE THEME
+========================================= */
+
+.sensors-section {
+  position: relative;
+  width: 100%;
+  padding: 110px 6%;
+
+  /* Layered stars over the base dark gradient */
+  background-color: #080808;
+  background-image:
+    /* Fine subtle stars (dense tile: 330px) */
+    radial-gradient(1px 1px at 35px 40px, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1px 1px at 80px 150px, rgba(190, 190, 190, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 170px 60px, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1px 1px at 240px 220px, rgba(160, 160, 160, 0.45), transparent),
+    radial-gradient(1.5px 1.5px at 300px 100px, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1px 1px at 120px 290px, rgba(255, 255, 255, 0.75), transparent),
+
+    /* Medium twinkling stars (wide tile: 520px) */
+    radial-gradient(1.5px 1.5px at 50px 190px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 200px 380px, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(1.5px 1.5px at 390px 120px, rgba(210, 210, 210, 0.65), transparent),
+    radial-gradient(2px 2px at 480px 470px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 310px 310px, rgba(180, 180, 180, 0.55), transparent),
+
+    /* Base dark background gradient */
+    linear-gradient(
+      180deg,
+      #080808 0%,
+      #0d0d0d 50%,
+      #080808 100%
+    );
+
+  background-size:
+    330px 330px, 330px 330px, 330px 330px, 330px 330px, 330px 330px, 330px 330px,
+    520px 520px, 520px 520px, 520px 520px, 520px 520px, 520px 520px,
+    100% 100%;
+
+  background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, no-repeat;
+
+  animation: sensorStarTwinkle 8s ease-in-out infinite alternate;
+
+  color: #ffffff;
+  overflow: hidden;
+}
+
+@keyframes sensorStarTwinkle {
+  0% {
+    background-position:
+      0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      10px -14px, 10px -14px, 10px -14px, 10px -14px, 10px -14px, 10px -14px,
+      -14px 18px, -14px 18px, -14px 18px, -14px 18px, -14px 18px,
+      0 0;
+  }
+}
+
+/* =========================================
+   BACKGROUND DETAILS
+========================================= */
+
+.sensors-section::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  top: -200px;
+  right: -180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.025);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.sensors-section::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  bottom: -180px;
+  left: -150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.018);
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.sensors-section .section-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.sensors-section .section-heading {
+  max-width: 680px;
+  margin-bottom: 55px;
+}
+
+.sensors-section .section-tag {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #777777;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+.sensors-section .section-heading h2 {
+  margin: 0;
+  color: #f2f2f2;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.sensors-section .section-heading h2 span {
+  display: block;
+  margin-top: 7px;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #c8c8c8 50%,
+    #777777 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.sensors-section .section-heading p {
+  max-width: 650px;
+  margin-top: 20px;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   SENSOR GRID
+========================================= */
+
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* =========================================
+   SENSOR CARD
+========================================= */
+
+.sensor-card {
+  position: relative;
+  min-height: 430px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.012)
+  );
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sensor-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255, 255, 255, 0.23);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.018)
+  );
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(255, 255, 255, 0.025);
+}
+
+/* =========================================
+   CARD TOP HIGHLIGHT
+========================================= */
+
+.sensor-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+/* =========================================
+   SENSOR HEADER
+========================================= */
+
+.sensor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+/* =========================================
+   SENSOR CODE
+========================================= */
+
+.sensor-code {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   SENSOR TYPE
+========================================= */
+
+.sensor-type {
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #777777;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+}
+
+/* =========================================
+   SENSOR VISUAL
+========================================= */
+
+.sensor-visual {
+  position: relative;
+  height: 205px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.065),
+    rgba(255, 255, 255, 0.01) 55%,
+    rgba(0, 0, 0, 0.25)
+  );
+  overflow: hidden;
+}
+
+/* =========================================
+   GRID LINES
+========================================= */
+
+.sensor-grid-lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.055) 1px,
+      transparent 1px
+    );
+  background-size: 28px 28px;
+}
+
+/* =========================================
+   RADAR / CIRCLE
+========================================= */
+
+.sensor-visual::before {
+  content: "";
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px rgba(255, 255, 255, 0.018),
+    0 0 0 40px rgba(255, 255, 255, 0.012);
+}
+
+/* =========================================
+   CROSSHAIR
+========================================= */
+
+.sensor-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 200;
+  opacity: 0.8;
+  z-index: 3;
+}
+
+/* Horizontal crosshair */
+.sensor-crosshair::before {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Vertical crosshair */
+.sensor-crosshair::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================================
+   SCAN LINE
+========================================= */
+
+.sensor-scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  top: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  animation: sensorScan 4s linear infinite;
+  z-index: 4;
+}
+
+@keyframes sensorScan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   SENSOR TITLE
+========================================= */
+
+.sensor-card h3 {
+  margin: 0 0 9px;
+  color: #e9e9e9;
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 650;
+}
+
+/* =========================================
+   SENSOR DESCRIPTION
+========================================= */
+
+.sensor-card > p {
+  margin: 0;
+  color: #707070;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   SENSOR FOOTER
+========================================= */
+
+.sensor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: #555555;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.sensor-footer span:last-child {
+  color: #a5a5a5;
+  font-size: 15px;
+  letter-spacing: 0;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.sensor-card:hover .sensor-footer span:last-child {
+  transform: translateX(4px);
+  color: #ffffff;
+}
+
+/* =========================================
+   MULTI-MODAL NOTE
+========================================= */
+
+.modal-note {
+  position: relative;
+  margin-top: 25px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.modal-note-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.modal-note p {
+  margin: 0;
+  color: #707070;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.modal-note strong {
+  color: #bcbcbc;
+  font-weight: 650;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .sensors-section {
+    padding: 90px 5%;
+  }
+
+  .sensor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sensor-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 9px);
+    width: 100%;
+    justify-self: center;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .sensors-section {
+    padding: 75px 20px;
+  }
+
+  .sensors-section .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .sensors-section .section-heading h2 {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .sensors-section .section-heading p {
+    font-size: 11px;
+  }
+
+  .sensor-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .sensor-card {
+    min-height: 400px;
+  }
+
+  .sensor-card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .sensor-visual {
+    height: 190px;
+  }
+
+  .modal-note {
+    align-items: flex-start;
+    padding: 17px;
+  }
+
+  .modal-note-icon {
+    margin-top: 2px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .sensors-section {
+    padding: 65px 16px;
+  }
+
+  .sensors-section .section-heading h2 {
+    font-size: 31px;
+  }
+
+  .sensor-card {
+    padding: 17px;
+    min-height: 385px;
+  }
+
+  .sensor-code {
+    font-size: 16px;
+  }
+
+  .sensor-type {
+    font-size: 7px;
+  }
+
+  .sensor-visual {
+    height: 175px;
+  }
+
+  .sensor-card h3 {
+    font-size: 14px;
+  }
+
+  .sensor-card > p {
+    font-size: 9px;
+  }
+
+  .modal-note p {
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .sensors-section {
+    animation: none;
+  }
+
+  .sensor-scan-line {
+    animation: none;
+  }
+
+  .sensor-card {
+    transition: none;
+  }
+}

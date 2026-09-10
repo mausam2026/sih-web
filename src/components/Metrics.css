@@ -1,0 +1,505 @@
+/* =========================================
+   METRICS SECTION
+   SELENOMATCH — GREY + WHITE THEME
+========================================= */
+
+.metrics-section {
+  position: relative;
+  width: 100%;
+  padding: 110px 6%;
+
+  /* Soft, low-contrast star layers + radial highlight + base dark background */
+  background-color: #080808;
+  background-image:
+    /* Layer 1: Subtle pinpoint stars */
+    radial-gradient(1px 1px at 30px 40px, rgba(255, 255, 255, 0.4) 100%, transparent),
+    radial-gradient(1px 1px at 110px 170px, rgba(200, 205, 215, 0.3) 100%, transparent),
+    radial-gradient(0.75px 0.75px at 190px 70px, rgba(180, 185, 195, 0.25) 100%, transparent),
+    radial-gradient(1.25px 1.25px at 250px 230px, rgba(255, 255, 255, 0.35) 100%, transparent),
+    radial-gradient(1px 1px at 310px 110px, rgba(220, 225, 235, 0.3) 100%, transparent),
+    radial-gradient(0.75px 0.75px at 130px 300px, rgba(160, 165, 175, 0.2) 100%, transparent),
+
+    /* Layer 2: Muted soft stars */
+    radial-gradient(1.25px 1.25px at 60px 200px, rgba(255, 255, 255, 0.4) 100%, transparent),
+    radial-gradient(1.5px 1.5px at 210px 390px, rgba(240, 245, 255, 0.45) 100%, transparent),
+    radial-gradient(1px 1px at 400px 130px, rgba(200, 205, 215, 0.25) 100%, transparent),
+    radial-gradient(1.25px 1.25px at 490px 480px, rgba(255, 255, 255, 0.35) 100%, transparent),
+    radial-gradient(1px 1px at 330px 320px, rgba(180, 185, 195, 0.22) 100%, transparent),
+
+    /* Original top-center light glow */
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 255, 255, 0.045),
+      transparent 35%
+    );
+
+  background-size:
+    320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px,
+    520px 520px, 520px 520px, 520px 520px, 520px 520px, 520px 520px,
+    100% 100%;
+
+  background-repeat: repeat;
+
+  /* Gentle drift twinkle without global brightness flare */
+  animation: metricsStarTwinkle 8s ease-in-out infinite alternate;
+
+  color: #ffffff;
+  overflow: hidden;
+}
+
+@keyframes metricsStarTwinkle {
+  0% {
+    background-position:
+      0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      6px -10px, 6px -10px, 6px -10px, 6px -10px, 6px -10px, 6px -10px,
+      -10px 12px, -10px 12px, -10px 12px, -10px 12px, -10px 12px,
+      0 0;
+  }
+}
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.metrics-section::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.025);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.metrics-section::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: -150px;
+  bottom: -150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.025);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.metrics-section .section-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.metrics-section .section-heading {
+  margin-bottom: 55px;
+}
+
+.metrics-section .section-heading.center {
+  text-align: center;
+}
+
+.metrics-section .section-tag {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #858585;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.metrics-section .section-heading h2 {
+  margin: 0;
+  color: #f2f2f2;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.metrics-section .section-heading h2 span {
+  display: block;
+  margin-top: 6px;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #c5c5c5 50%,
+    #777777 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.metrics-section .section-heading p {
+  max-width: 620px;
+  margin: 20px auto 0;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   METRICS GRID
+========================================= */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* =========================================
+   METRIC CARD
+========================================= */
+
+.metric-card {
+  position: relative;
+  min-height: 230px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.012)
+  );
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Top highlight */
+.metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
+
+/* Corner glow */
+.metric-card::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: -70px;
+  right: -70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.metric-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255, 255, 255, 0.23);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.018)
+  );
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(255, 255, 255, 0.025);
+}
+
+/* =========================================
+   METRIC VALUE
+========================================= */
+
+.metric-value {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  color: #ffffff;
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 750;
+  letter-spacing: -1.5px;
+}
+
+.metric-value small {
+  color: #777777;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* =========================================
+   METRIC TITLE
+========================================= */
+
+.metric-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 30px 0 8px;
+  color: #e7e7e7;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.1px;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.metric-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #6e6e6e;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.metrics-cta {
+  position: relative;
+  margin-top: 30px;
+  padding: 30px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.015)
+  );
+  overflow: hidden;
+}
+
+.metrics-cta::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: -150px;
+  top: -100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.metrics-cta > div {
+  position: relative;
+  z-index: 1;
+}
+
+.metrics-cta .section-tag {
+  margin-bottom: 7px;
+}
+
+.metrics-cta h3 {
+  margin: 0;
+  color: #eeeeee;
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.metrics-cta .primary-btn {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #080808;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.metrics-cta .primary-btn:hover {
+  transform: translateY(-2px);
+  background: #dcdcdc;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+  .metrics-section {
+    padding: 90px 5%;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metric-card {
+    min-height: 215px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .metrics-section {
+    padding: 75px 20px;
+  }
+
+  .metrics-section .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .metrics-section .section-heading h2 {
+    font-size: 35px;
+    letter-spacing: -1.5px;
+  }
+
+  .metrics-section .section-heading p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .metric-card {
+    min-height: 190px;
+    padding: 24px;
+  }
+
+  .metric-value {
+    font-size: 38px;
+  }
+
+  .metric-card h3 {
+    margin-top: 24px;
+  }
+
+  .metrics-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+    gap: 22px;
+  }
+
+  .metrics-cta h3 {
+    font-size: 17px;
+  }
+
+  .metrics-cta .primary-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .metrics-section {
+    padding: 65px 16px;
+  }
+
+  .metrics-section .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .metric-card {
+    min-height: 175px;
+    padding: 21px;
+  }
+
+  .metric-value {
+    font-size: 34px;
+  }
+
+  .metric-card h3 {
+    font-size: 13px;
+  }
+
+  .metric-card p {
+    font-size: 9px;
+  }
+
+  .metrics-cta {
+    padding: 21px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .metrics-section {
+    animation: none;
+  }
+
+  .metric-card,
+  .metrics-cta .primary-btn {
+    transition: none;
+  }
+}

@@ -1,0 +1,431 @@
+/* =========================================
+   NAVBAR
+   GREY + WHITE LUNAR THEME
+========================================= */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 72px;
+
+  padding: 0 50px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1000;
+
+  background: rgba(8, 8, 8, 0.88);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 5px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+  position: relative;
+
+  display: inline-block;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.navbar-logo span {
+  color: #a5a5a5;
+}
+
+
+.navbar-logo:hover {
+  opacity: 0.8;
+
+  transform: translateY(-1px);
+}
+
+
+/* Small glow under logo */
+
+.navbar-logo::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 22px;
+  height: 1px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.5);
+
+  transition: width 0.3s ease;
+}
+
+
+.navbar-logo:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.navbar-links li {
+  position: relative;
+}
+
+
+.navbar-links a {
+  position: relative;
+
+  display: inline-block;
+
+  color: #8e8e8e;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+/* Underline */
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  width: 0;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 7px rgba(255, 255, 255, 0.45);
+
+  transition: width 0.3s ease;
+}
+
+
+.navbar-links a:hover {
+  color: #ffffff;
+}
+
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   LAUNCH ANALYSIS BUTTON
+========================================= */
+
+.navbar-analysis-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 19px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #080808;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 5px 20px rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.navbar-analysis-btn:hover {
+  transform: translateY(-2px);
+
+  background: #dcdcdc;
+
+  color: #000000;
+
+  border-color: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+
+.navbar-analysis-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .navbar {
+    padding: 0 30px;
+  }
+
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+
+  .navbar-links a {
+    font-size: 12px;
+  }
+
+
+  .navbar-analysis-btn {
+    padding: 10px 15px;
+
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    padding: 0 22px;
+  }
+
+
+  .navbar-links {
+    gap: 15px;
+  }
+
+
+  .navbar-links a {
+    font-size: 11px;
+  }
+
+
+  .navbar-logo {
+    font-size: 19px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: auto;
+
+    min-height: 68px;
+
+    padding: 13px 18px;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+  }
+
+
+  /* Logo */
+
+  .navbar-logo {
+    font-size: 19px;
+  }
+
+
+  /* Launch button */
+
+  .navbar-analysis-btn {
+    padding: 9px 13px;
+
+    font-size: 10px;
+  }
+
+
+  /* Navigation */
+
+  .navbar-links {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    padding: 5px 0 3px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+
+  .navbar-links::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .navbar-links a {
+    font-size: 10px;
+
+    white-space: nowrap;
+  }
+
+
+  .navbar-links a::after {
+    bottom: -5px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .navbar {
+    padding: 12px 14px;
+  }
+
+
+  .navbar-logo {
+    font-size: 16px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .navbar-analysis-btn {
+    padding: 8px 10px;
+
+    font-size: 9px;
+  }
+
+
+  .navbar-links {
+    gap: 17px;
+  }
+
+
+  .navbar-links a {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+  .navbar-logo {
+    font-size: 15px;
+  }
+
+
+  .navbar-analysis-btn {
+    padding: 7px 8px;
+
+    font-size: 8px;
+  }
+
+
+  .navbar-links {
+    gap: 14px;
+  }
+
+}

@@ -1,0 +1,570 @@
+/* =========================================
+   PIPELINE SECTION
+   SELENOMATCH — GREY + WHITE THEME
+========================================= */
+
+.pipeline-section {
+  position: relative;
+  width: 100%;
+  padding: 110px 6%;
+
+  /* Layered stars over the base dark gradient */
+  background-color: #080808;
+  background-image:
+    /* Fine subtle stars (dense tile: 320px) */
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 75px 120px, rgba(200, 200, 200, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 160px 45px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 230px 210px, rgba(160, 160, 160, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 290px 90px, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1px 1px at 110px 280px, rgba(255, 255, 255, 0.75), transparent),
+
+    /* Medium twinkling stars (wide tile: 540px) */
+    radial-gradient(1.5px 1.5px at 45px 180px, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(2px 2px at 190px 370px, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(1.5px 1.5px at 380px 110px, rgba(220, 220, 220, 0.7), transparent),
+    radial-gradient(2px 2px at 470px 480px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 320px 300px, rgba(200, 200, 200, 0.6), transparent),
+
+    /* Base dark background gradient */
+    linear-gradient(
+      180deg,
+      #080808 0%,
+      #0b0b0b 50%,
+      #080808 100%
+    );
+
+  background-size:
+    320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px,
+    540px 540px, 540px 540px, 540px 540px, 540px 540px, 540px 540px,
+    100% 100%;
+
+  background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, no-repeat;
+
+  animation: starTwinkle 7s ease-in-out infinite alternate;
+
+  color: #ffffff;
+  overflow: hidden;
+}
+
+@keyframes starTwinkle {
+  0% {
+    background-position:
+      0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0, 0 0, 0 0, 0 0, 0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      -8px 12px, -8px 12px, -8px 12px, -8px 12px, -8px 12px, -8px 12px,
+      12px -18px, 12px -18px, 12px -18px, 12px -18px, 12px -18px,
+      0 0;
+  }
+}
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.pipeline-section::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.025);
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+.pipeline-section::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  right: -180px;
+  bottom: -180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.018);
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.pipeline-section .section-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.pipeline-section .section-heading {
+  margin-bottom: 65px;
+}
+
+.pipeline-section .section-heading.center {
+  text-align: center;
+}
+
+.pipeline-section .section-tag {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #777777;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+.pipeline-section .section-heading h2 {
+  margin: 0;
+  color: #f2f2f2;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.pipeline-section .section-heading h2 span {
+  display: block;
+  margin-top: 7px;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #c5c5c5 50%,
+    #777777 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.pipeline-section .section-heading p {
+  max-width: 620px;
+  margin: 20px auto 0;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   PIPELINE LAYOUT
+========================================= */
+
+.pipeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+/* =========================================
+   PIPELINE STEP
+========================================= */
+
+.pipeline-step {
+  position: relative;
+  min-height: 270px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.012)
+  );
+  overflow: visible;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================
+   TOP HIGHLIGHT
+========================================= */
+
+.pipeline-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 76%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.pipeline-step:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.018)
+  );
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(255, 255, 255, 0.025);
+}
+
+/* =========================================
+   PIPELINE NUMBER
+========================================= */
+
+.pipeline-number {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.015)
+  );
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pipeline-step:hover .pipeline-number {
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* =========================================
+   STEP CONTENT
+========================================= */
+
+.pipeline-content {
+  position: relative;
+  z-index: 1;
+}
+
+.pipeline-content h3 {
+  margin: 0 0 10px;
+  color: #eeeeee;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 650;
+}
+
+.pipeline-content p {
+  margin: 0;
+  color: #6f6f6f;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   PIPELINE ARROW
+========================================= */
+
+.pipeline-arrow {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: #0b0b0b;
+  color: #858585;
+  font-size: 13px;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.pipeline-step:hover .pipeline-arrow {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.30);
+  transform: translateY(-50%) translateX(3px);
+}
+
+/* =========================================
+   CONNECTING LINE
+========================================= */
+
+.pipeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  right: 3%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* =========================================
+   FINAL RESULT
+========================================= */
+
+.pipeline-result {
+  position: relative;
+  margin-top: 32px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 9px;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.015)
+  );
+  overflow: hidden;
+}
+
+.pipeline-result::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #555555
+  );
+}
+
+/* =========================================
+   RESULT ICON
+========================================= */
+
+.result-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* =========================================
+   RESULT TEXT
+========================================= */
+
+.pipeline-result span {
+  display: block;
+  margin-bottom: 5px;
+  color: #777777;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.pipeline-result h3 {
+  margin: 0;
+  color: #e8e8e8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .pipeline-section {
+    padding: 90px 5%;
+  }
+
+  .pipeline {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .pipeline::before {
+    display: none;
+  }
+
+  .pipeline-step {
+    min-height: 250px;
+  }
+
+  .pipeline-arrow {
+    display: none;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .pipeline-section {
+    padding: 75px 20px;
+  }
+
+  .pipeline-section .section-heading {
+    margin-bottom: 42px;
+  }
+
+  .pipeline-section .section-heading h2 {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .pipeline-section .section-heading p {
+    font-size: 11px;
+  }
+
+  .pipeline {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pipeline-step {
+    min-height: auto;
+    padding: 21px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 17px;
+  }
+
+  .pipeline-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  }
+
+  .pipeline-content {
+    padding-top: 2px;
+  }
+
+  .pipeline-content h3 {
+    font-size: 14px;
+  }
+
+  .pipeline-content p {
+    font-size: 10px;
+  }
+
+  .pipeline-result {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .pipeline-result h3 {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .pipeline-section {
+    padding: 65px 16px;
+  }
+
+  .pipeline-section .section-heading h2 {
+    font-size: 31px;
+  }
+
+  .pipeline-step {
+    padding: 18px;
+    gap: 13px;
+  }
+
+  .pipeline-number {
+    width: 35px;
+    height: 35px;
+    font-size: 9px;
+  }
+
+  .pipeline-content h3 {
+    font-size: 13px;
+  }
+
+  .pipeline-content p {
+    font-size: 9px;
+    line-height: 1.65;
+  }
+
+  .pipeline-result {
+    padding: 17px;
+  }
+
+  .result-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pipeline-section {
+    animation: none;
+  }
+
+  .pipeline-step,
+  .pipeline-number,
+  .pipeline-arrow {
+    transition: none;
+  }
+}

@@ -1,0 +1,430 @@
+/* =========================================
+   SELENOMATCH
+   GLOBAL APP STYLES
+   GREY + WHITE LUNAR THEME
+========================================= */
+
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+
+  background: #080808;
+}
+
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+
+  background: #080808;
+
+  color: #ffffff;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================
+   ROOT
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #080808;
+}
+
+
+/* =========================================
+   APP WRAPPER
+========================================= */
+
+.app {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: #080808;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+main {
+  position: relative;
+
+  width: 100%;
+
+  background: #080808;
+}
+
+
+/* =========================================
+   GLOBAL IMAGES
+========================================= */
+
+img {
+  max-width: 100%;
+
+  display: block;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+
+button {
+  border: none;
+
+  outline: none;
+}
+
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+  background: #ffffff;
+
+  color: #080808;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+
+  border-radius: 10px;
+
+  border: 1px solid #111111;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+
+
+/* Firefox */
+
+html {
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    #3a3a3a
+    #050505;
+}
+
+
+/* =========================================
+   GLOBAL SECTION BEHAVIOR
+========================================= */
+
+section {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+
+/* Prevent anchor targets from hiding
+   behind the fixed navbar */
+
+section[id] {
+  scroll-margin-top: 85px;
+}
+
+
+/* =========================================
+   COMMON CONTAINER
+========================================= */
+
+.section-container {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+/* =========================================
+   COMMON SECTION TAG
+========================================= */
+
+.section-tag {
+  color: #858585;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   COMMON PRIMARY BUTTON
+========================================= */
+
+.primary-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 13px 22px;
+
+  border: 1px solid #ffffff;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #080808;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+
+  background: #dcdcdc;
+
+  box-shadow:
+    0 8px 25px rgba(255, 255, 255, 0.10);
+}
+
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   COMMON SECONDARY BUTTON
+========================================= */
+
+.secondary-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 13px 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #a0a0a0;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.secondary-btn:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 255, 255, 0.35);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   FOCUS ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   DISABLED ELEMENTS
+========================================= */
+
+button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================
+   RESPONSIVE CONTAINER
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section-container {
+    padding-left: 25px;
+
+    padding-right: 25px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .section-container {
+    padding-left: 20px;
+
+    padding-right: 20px;
+  }
+
+
+  section[id] {
+    scroll-margin-top: 70px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .section-container {
+    padding-left: 16px;
+
+    padding-right: 16px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+
+}

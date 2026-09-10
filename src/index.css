@@ -1,0 +1,316 @@
+/* =========================================
+   SELENOMATCH
+   GLOBAL INDEX STYLES
+   GREY + WHITE THEME
+========================================= */
+
+
+/* =========================================
+   BOX SIZING
+========================================= */
+
+html {
+  box-sizing: border-box;
+
+  width: 100%;
+
+  background: #080808;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+  margin: 0;
+
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: #080808;
+
+  color: #ffffff;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================
+   ROOT
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #080808;
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+p {
+  margin: 0;
+
+  color: #858585;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+/* =========================================
+   LISTS
+========================================= */
+
+ul,
+ol {
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+/* =========================================
+   IMAGES
+========================================= */
+
+img {
+  max-width: 100%;
+
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+  margin: 0;
+
+  font: inherit;
+
+  color: inherit;
+
+  background: none;
+
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
+
+input,
+textarea,
+select {
+  margin: 0;
+
+  font: inherit;
+
+  color: inherit;
+}
+
+
+/* =========================================
+   REMOVE DEFAULT OUTLINE
+========================================= */
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+
+/* =========================================
+   ACCESSIBILITY FOCUS
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   TEXT SELECTION
+========================================= */
+
+::selection {
+  background: #ffffff;
+
+  color: #080808;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+html {
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    #444444
+    #080808;
+}
+
+
+::-webkit-scrollbar {
+  width: 7px;
+
+  height: 7px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #3c3c3c;
+
+  border-radius: 10px;
+
+  border: 1px solid #111111;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+
+
+/* =========================================
+   SMOOTH SCROLL
+========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* =========================================
+   MOBILE TEXT RENDERING
+========================================= */
+
+body {
+  text-rendering: optimizeLegibility;
+
+  -webkit-text-size-adjust: 100%;
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    font-size: 14px;
+  }
+
+}
