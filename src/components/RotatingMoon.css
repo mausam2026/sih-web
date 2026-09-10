@@ -83,8 +83,8 @@
 /* Base Moon Container with 3D perspective */
 .moon-container {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 520px;
+  height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
