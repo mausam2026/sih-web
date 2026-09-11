@@ -8,7 +8,7 @@ function Analysis() {
   const [sourcePreview, setSourcePreview] = useState(null);
   const [referencePreview, setReferencePreview] = useState(null);
 
-  const [sensor, setSensor] = useState("OHRC");
+  
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [result, setResult] = useState(null);
 
@@ -137,23 +137,7 @@ function Analysis() {
         </div>
 
         {/* Analysis Controls */}
-        <div className="analysis-controls">
-          <label htmlFor="sensor">
-            Sensor
-          </label>
-
-          <select
-            id="sensor"
-            value={sensor}
-            onChange={(event) => setSensor(event.target.value)}
-          >
-            <option value="OHRC">OHRC</option>
-            <option value="TMC">TMC</option>
-            <option value="LROC">LROC</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
+        
         {/* Image Uploads */}
         <div className="image-upload-grid">
 
