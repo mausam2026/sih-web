@@ -26,7 +26,7 @@ function Metrics() {
     {
       value: "--",
       unit: "px",
-      title: "Registration Error",
+      title: "Outlier",
       description:
         "Target measurement for evaluating the quality of image alignment."
     }

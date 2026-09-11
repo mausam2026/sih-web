@@ -55,11 +55,7 @@ function Hero() {
             <strong>03</strong>
             <span>Imaging Modalities</span>
           </div>
-
-          <div>
-            <strong>AI</strong>
-            <span>Powered Analysis</span>
-          </div>
+    
 
         </div>
 

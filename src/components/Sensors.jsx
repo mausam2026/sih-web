@@ -16,13 +16,7 @@ function Sensors() {
         "Stereo imaging data supporting terrain mapping and surface characterization.",
       type: "OPTICAL / STEREO"
     },
-    {
-      code: "IIRS",
-      name: "Imaging Infrared Spectrometer",
-      description:
-        "Spectral imaging data providing information beyond conventional visible imagery.",
-      type: "SPECTRAL"
-    }
+    
   ];
 
   return (

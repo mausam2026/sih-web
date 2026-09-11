@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-brand">
 
           <a href="#home" className="footer-logo">
-            LUNAR<span>VISION</span>
+            SELENO<span>VISION</span>
           </a>
 
           <p>
@@ -33,7 +33,6 @@ function Footer() {
           <h3>Navigation</h3>
 
           <a href="#home">Home</a>
-          <a href="#problem">Problem</a>
           <a href="#pipeline">Pipeline</a>
           <a href="#sensors">Sensors</a>
           <a href="#metrics">Results</a>

@@ -139,7 +139,7 @@ function Analysis() {
                   </strong>
 
                   <span>
-                    PNG, JPG, TIFF
+                    XML,TIFF
                   </span>
                 </>
               )}
@@ -194,7 +194,7 @@ function Analysis() {
                   </strong>
 
                   <span>
-                    PNG, JPG, TIFF
+                    XML,TIFF
                   </span>
                 </>
               )}
@@ -281,7 +281,11 @@ function Analysis() {
 
               <div>
                 <strong>{result.inliers}</strong>
-                <span>Inlier Matches</span>
+                <span>OUTLIER</span>
+              </div>
+              <div>
+                <strong>{result.inliers}</strong>
+                <span>Inlier</span>
               </div>
 
               <div>

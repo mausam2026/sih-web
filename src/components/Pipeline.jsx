@@ -4,63 +4,102 @@ function Pipeline() {
   const pipelineSteps = [
     {
       number: "01",
-      title: "Input Images",
+      title: "Raw Optical Datasets",
       description:
-        "Load source Chandrayaan-2 imagery and a fixed lunar reference image."
+        "ISRO TMC, OHRC, and NASA LRO optical datasets provide the source lunar imagery for cross-modal matching.",
     },
     {
       number: "02",
-      title: "Preprocessing",
+      title: "Metadata Parser",
       description:
-        "Normalize and prepare images to reduce differences caused by acquisition conditions."
+        "Extract XML/PDS3 metadata, image corners, and physical resolution in meters per pixel for every input image.",
     },
     {
       number: "03",
-      title: "Feature Extraction",
+      title: "Intersection Calculator",
       description:
-        "Extract distinctive visual representations from the lunar surface."
+        "Reproject image corners into South Polar Stereographic meters and compute the true geometric overlap polygon and pixel coordinates.",
     },
     {
       number: "04",
-      title: "Multi-Modal Matching",
+      title: "Geo-Sampler",
       description:
-        "Find candidate correspondence points between different image modalities."
+        "Use Rasterio windowed reads to extract only the overlapping region from each raw image without loading unnecessary data.",
     },
     {
       number: "05",
-      title: "Geometric Verification",
+      title: "Optical Preprocessor",
       description:
-        "Remove incorrect matches and retain geometrically consistent correspondences."
+        "Apply Log Transform, intensity normalization, and masked CLAHE to improve the consistency and visibility of lunar surface features.",
     },
     {
       number: "06",
-      title: "Registration",
+      title: "Patch Extractor",
       description:
-        "Transform the source image into the reference coordinate system."
-    }
+        "Slice the processed arrays into 512×512 tiles and filter patches using information-density quality control.",
+    },
+    {
+      number: "07",
+      title: "Feature Extraction",
+      description:
+        "Process co-registered 512×512 patch pairs through parallel feature-matching architectures.",
+      branches: [
+        {
+          title: "LoFTR",
+          description:
+            "Local Feature Matching with Transformers for dense correspondence estimation.",
+        },
+        {
+          title: "RIFT-2",
+          description:
+            "Radiation-invariant feature matching using phase-congruency based representations.",
+        },
+      ],
+    },
+    {
+      number: "08",
+      title: "Match Fusion",
+      description:
+        "Merge LoFTR and RIFT-2 candidate correspondences into a unified coordinate-consistent match list.",
+    },
+    {
+      number: "09",
+      title: "RANSAC Filter",
+      description:
+        "Perform geometric verification, estimate the homography, and reject spatially inconsistent outlier matches.",
+    },
+    {
+      number: "10",
+      title: "Sub-Pixel Alignment",
+      description:
+        "Refine verified keypoint coordinates using local intensity gradients for higher registration precision.",
+    },
+    {
+      number: "11",
+      title: "Match Visualization",
+      description:
+        "Display the registered image pair with valid inlier correspondence points and tie-lines.",
+    },
   ];
 
   return (
     <section id="pipeline" className="pipeline-section">
-
       <div className="section-container">
 
         <div className="section-heading center">
-
           <div className="section-tag">
             INTELLIGENT WORKFLOW
           </div>
 
           <h2>
-            From Raw Images to
-            <span>Reliable Correspondence</span>
+            From Raw Lunar Data to
+            <span> Verified Correspondence</span>
           </h2>
 
           <p>
-            A machine-learning assisted pipeline for robust lunar
-            image matching and registration.
+            A geometry-aware, machine-learning assisted pipeline for
+            robust cross-modal lunar image matching and registration.
           </p>
-
         </div>
 
         <div className="pipeline">
@@ -73,11 +112,31 @@ function Pipeline() {
               </div>
 
               <div className="pipeline-content">
-
                 <h3>{step.title}</h3>
 
                 <p>{step.description}</p>
 
+                {step.branches && (
+                  <div className="pipeline-branches">
+
+                    {step.branches.map((branch) => (
+                      <div
+                        className="pipeline-branch"
+                        key={branch.title}
+                      >
+                        <div className="branch-marker">
+                          →
+                        </div>
+
+                        <div>
+                          <h4>{branch.title}</h4>
+                          <p>{branch.description}</p>
+                        </div>
+                      </div>
+                    ))}
+
+                  </div>
+                )}
               </div>
 
               {index !== pipelineSteps.length - 1 && (
@@ -99,15 +158,20 @@ function Pipeline() {
 
           <div>
             <span>FINAL OUTPUT</span>
+
             <h3>
-              Registered Image + Correspondence Points
+              Registered Image + Verified Sub-Pixel Correspondence Points
             </h3>
+
+            <p>
+              Side-by-side visualization of the matched lunar images with
+              geometrically verified inlier tie-lines.
+            </p>
           </div>
 
         </div>
 
       </div>
-
     </section>
   );
 }
